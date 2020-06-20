@@ -33,6 +33,9 @@ ProjectClient.init(
             {
                 fields: ["uuid"],
             },
+            {
+                fields: ["clientid"],
+            },
         ],
     }
 );
@@ -54,6 +57,11 @@ export default {
     searchProject(uuid: string) {
         return ProjectClient.findAll({
             where: { uuid },
+        });
+    },
+    searchClient(clientid: string) {
+        return ProjectClient.findAll({
+            where: { clientid },
         });
     },
 };

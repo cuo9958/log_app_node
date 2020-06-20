@@ -1,4 +1,4 @@
-import { Model, DataTypes } from "sequelize";
+import { Model, DataTypes, Op } from "sequelize";
 import db from "../db//mysql";
 
 class Project extends Model {}
@@ -54,5 +54,14 @@ export default {
     },
     getFromUid: function (uuid) {
         return Project.findOne({ where: { uuid } });
+    },
+    getAllUid(ids: string[]) {
+        return Project.findAll({
+            where: {
+                uuid: {
+                    [Op.in]: ids,
+                },
+            },
+        });
     },
 };

@@ -1,4 +1,4 @@
-import { Model, DataTypes } from "sequelize";
+import { Model, DataTypes, Op } from "sequelize";
 import db from "../db/mysql";
 
 class Msg extends Model {}
@@ -59,6 +59,27 @@ export default {
             where: {
                 id,
             },
+        });
+    },
+    /**
+     * 查询最近7天的客户端相关的消息
+     * @param uuid uuid数组
+     * @param pageIndex 页数
+     */
+    searchFromUid(uuid: string[], pageIndex = 0) {
+        const limit = 20;
+        return Msg.findAll({
+            where: {
+                uuid: {
+                    [Op.in]: uuid,
+                },
+                create_time: {
+                    [Op.gt]: Date.now() - 604800000,
+                },
+            },
+            order: [["id", "desc"]],
+            offset: pageIndex * limit,
+            limit,
         });
     },
 };
