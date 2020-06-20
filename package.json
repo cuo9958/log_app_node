@@ -1,0 +1,44 @@
+{
+    "name": "log_app_node",
+    "version": "1.0.0",
+    "description": "告警app的服务端",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "tsc",
+        "dev": "nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cuo9958/node-ts-template.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/cuo9958/node-ts-template/issues"
+    },
+    "homepage": "https://github.com/cuo9958/node-ts-template#readme",
+    "dependencies": {
+        "axios": "0.19.2",
+        "config": "3.3.1",
+        "cron": "1.8.2",
+        "ioredis": "4.16.1",
+        "koa": "2.11.0",
+        "koa-body": "4.1.1",
+        "koa-router": "8.0.8",
+        "mongodb": "3.5.5",
+        "mysql2": "2.1.0",
+        "sequelize": "5.21.6"
+    },
+    "devDependencies": {
+        "@types/config": "0.0.36",
+        "@types/ioredis": "4.14.9",
+        "@types/koa": "2.11.3",
+        "@types/koa-router": "7.4.0",
+        "@types/mongodb": "3.5.5",
+        "nodemon": "2.0.3",
+        "ts-node": "8.8.2",
+        "typescript": "3.6.3"
+    }
+}
