@@ -1,0 +1,14 @@
+{
+    "db": {
+        "host": "39.105.125.190",
+        "port": "3306",
+        "database": "logapp",
+        "user": "logapp",
+        "password": "SJM3tXENcKNNCaLm"
+    },
+    "redis": {
+        "port": 6379,
+        "host": "39.105.125.190",
+        "password": "zixiao521"
+    }
+}

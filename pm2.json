@@ -1,11 +1,11 @@
 {
     "apps": [
         {
-            "name": "node-ts-template@18000",
+            "name": "log_app_node@18801",
             "script": "dist/index.js",
             "args": [],
             "env": {
-                "PORT": "18000",
+                "PORT": "18801",
                 "NODE_ENV": "development"
             }
         }
