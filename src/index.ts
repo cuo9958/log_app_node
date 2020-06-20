@@ -14,7 +14,7 @@ app.use(sendError);
 //加载路由
 app.use(routers.routes()).use(routers.allowedMethods());
 
-const port = process.env.PORT || "8082";
+const port = process.env.PORT || "18801";
 
 app.listen(port, function () {
     console.log(`服务器运行在http://127.0.0.1:${port}`);

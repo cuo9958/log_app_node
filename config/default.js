@@ -21,4 +21,9 @@ module.exports = {
     //     reset: "",
     //     url: "mongodb://127.0.0.1:27017",
     // },
+
+    admin: {
+        user: "admin",
+        pwd: "1234",
+    },
 };
