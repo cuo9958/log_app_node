@@ -41,7 +41,6 @@ function getTemplate(title, txts, id) {
 
 async function pushNotice(data: IPushModel) {
     const list: any[] = await ProjectClientModel.searchProject(data.uuid);
-    console.log(list.length);
     // Getui
     const template = getTemplate(data.title, data.txts, data.uuid);
     const message = new ListMessage({
@@ -50,7 +49,6 @@ async function pushNotice(data: IPushModel) {
         data: template,
     });
     gtServer.getContentId(message, data.uuid, function (err, contentId) {
-        console.log(err, contentId);
         if (err) return;
         const targetList: any[] = [];
         list.forEach((item) => {
@@ -61,9 +59,13 @@ async function pushNotice(data: IPushModel) {
                 })
             );
         });
-        console.log("getContentId", contentId);
         gtServer.pushMessageToList(contentId, targetList, function (err, res) {
             console.log(err, res);
+            if (err) {
+                console.log("发送失败", contentId, err);
+            } else {
+                if (res.result !== "ok") console.log("发送失败", contentId, err);
+            }
         });
     });
 }
