@@ -61,6 +61,7 @@ export default {
             },
         });
     },
+
     /**
      * 查询最近7天的客户端相关的消息
      * @param uuid uuid数组
@@ -81,5 +82,14 @@ export default {
             offset: pageIndex * limit,
             limit,
         });
+    },
+    getCount(uuid: string, limit = 1) {
+        let config: any = {
+            limit: 20,
+            offset: (limit - 1) * 20,
+            order: [["id", "desc"]],
+            where: { uuid },
+        };
+        return Msg.findAndCountAll(config);
     },
 };

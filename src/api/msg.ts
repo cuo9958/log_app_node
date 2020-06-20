@@ -1,10 +1,17 @@
 import Router from "koa-router";
-import CrosMiddle from "../middleware/cros";
+import MsgModel from "../model/msg";
+import { ictx } from "../extends";
 
 const router = new Router();
 
-router.get("/", CrosMiddle, function (ctx, next) {
-    ctx.body = "测试接口";
+router.get("/", async function (ctx: ictx) {
+    const uuid = ctx.query.uuid;
+    try {
+        const data = await MsgModel.getCount(uuid);
+        ctx.Success(data);
+    } catch (error) {
+        ctx.Error(error.message);
+    }
 });
 
 export default router.routes();

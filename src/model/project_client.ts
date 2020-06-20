@@ -64,4 +64,16 @@ export default {
             where: { clientid },
         });
     },
+    getCount(uuid: string, limit = 1) {
+        let config: any = {
+            limit: 20,
+            offset: (limit - 1) * 20,
+            order: [["id", "desc"]],
+            where: { uuid },
+        };
+        return ProjectClient.findAndCountAll(config);
+    },
+    del(id: number) {
+        return ProjectClient.destroy({ where: { id } });
+    },
 };

@@ -52,6 +52,17 @@ export default {
             },
         });
     },
+    del(id: number) {
+        return Project.destroy({ where: { id } });
+    },
+    getCount(limit = 1) {
+        let config: any = {
+            limit: 20,
+            offset: (limit - 1) * 20,
+            order: [["id", "desc"]],
+        };
+        return Project.findAndCountAll(config);
+    },
     getFromUid: function (uuid) {
         return Project.findOne({ where: { uuid } });
     },
