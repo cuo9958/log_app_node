@@ -10,5 +10,12 @@
         "port": 6379,
         "host": "39.105.125.190",
         "password": "zixiao521"
+    },
+    "getui": {
+        "host": "http://api.getui.com/apiex.htm",
+        "appid": "4DkQD9bkWi97eWoLIgx6UA",
+        "appkey": "8v8nszofMO7Kb9XFP8HwN2",
+        "mastersecret": "rGkcU8uatD7aIOMpCFXQY7",
+        "appsecret": "hEY5tdhtVI8fToQPGqFXD7"
     }
 }

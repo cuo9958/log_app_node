@@ -26,4 +26,12 @@ module.exports = {
         user: "admin",
         pwd: "1234",
     },
+    //个推的配置
+    getui: {
+        host: "http://api.getui.com/apiex.htm",
+        appid: "",
+        appkey: "",
+        mastersecret: "",
+        appsecret: "",
+    },
 };

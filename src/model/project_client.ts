@@ -38,7 +38,7 @@ ProjectClient.init(
 );
 
 //强制初始化数据库
-ProjectClient.sync({ force: true });
+// ProjectClient.sync({ force: true });
 
 export default {
     insert: function (model: any) {
@@ -49,6 +49,11 @@ export default {
             where: {
                 id,
             },
+        });
+    },
+    searchProject(uuid: string) {
+        return ProjectClient.findAll({
+            where: { uuid },
         });
     },
 };
