@@ -34,7 +34,7 @@ function getTemplate(title, txts, id) {
         isRing: true,
         isVibrate: true,
         isClearable: false,
-        transmissionType: 2,
+        transmissionType: 1,
         transmissionContent: `{"id":${id}}`,
     });
 }
