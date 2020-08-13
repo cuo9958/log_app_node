@@ -4,6 +4,8 @@
 
 支持使用`create-app-git`命令一键安装。`create-app-git init node-ts-template`或者`npx create-app-git init node-ts-template`
 
+*** ios端下读取文件报错，可以只使用内存存储 ***
+
 ## 命令
 
 1. `dev`开发模式，执行启动就好，默认端口 8082
