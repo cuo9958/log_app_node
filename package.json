@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cuo9958/node-ts-template#readme",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "1.6.0",
     "config": "3.3.1",
     "cron": "1.8.2",
     "gt-push-sdk": "^4.1.1",
